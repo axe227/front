@@ -1,0 +1,77 @@
+/* Styles pour la section de recherche */
+.search-container {
+  margin: 20px; /* Espace autour de la section de recherche */
+  padding: 20px; /* Rembourrage interne */
+  border-radius: 8px; /* Coins arrondis */
+  background: white; /* Fond blanc */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+h2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police */
+  color: #357abd; /* Couleur des titres */
+}
+
+label {
+  font-weight: bold; /* Gras pour le label */
+}
+
+input[type="text"] {
+  padding: 10px; /* Rembourrage interne */
+  border: 1px solid #ddd; /* Bordure grise */
+  border-radius: 4px; /* Coins arrondis */
+  margin-right: 10px; /* Espace à droite */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+  padding: 10px 15px; /* Rembourrage interne */
+  border: none; /* Supprime la bordure */
+  background: linear-gradient(135deg, #905907ff, #357abd); /* Dégradé de fond */
+  color: white; /* Couleur du texte */
+  border-radius: 4px; /* Coins arrondis */
+  cursor: pointer; /* Curseur pointer */
+  transition: background 0.3s; /* Transition pour le changement de fond */
+}
+
+button:hover {
+  background: #ffd700; /* Couleur au survol */
+}
+
+.table-container {
+  margin: 20px; /* Espace autour du tableau */
+  border-radius: 8px; /* Coins arrondis */
+  overflow: hidden; /* Masque les coins arrondis */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre du tableau */
+}
+
+table {
+  width: 100%; /* Prend toute la largeur */
+  border-collapse: collapse; /* Fusionne les bordures */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police */
+}
+
+th, td {
+  padding: 12px; /* Espace à l'intérieur des cellules */
+  text-align: left; /* Aligne le texte à gauche */
+  border-bottom: 1px solid #ddd; /* Bordure inférieure */
+}
+
+th {
+  background: linear-gradient(135deg, #905907ff, #357abd); /* Couleur d'arrière-plan pour les en-têtes */
+  color: white; /* Couleur du texte pour les en-têtes */
+}
+
+tr:hover {
+  background-color: rgba(255, 215, 0, 0.1); /* Couleur de survol pour les lignes */
+}
+
+td i {
+  margin-right: 10px; /* Espace entre les icônes */
+  cursor: pointer; /* Change le curseur au survol */
+  color: #357abd; /* Couleur des icônes */
+}
+
+td i:hover {
+  color: #ffd700; /* Couleur au survol des icônes */
+}

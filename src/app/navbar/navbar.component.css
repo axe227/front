@@ -1,0 +1,101 @@
+/* Styles pour la navbar */
+.navbar {
+  display: flex;
+  justify-content: flex-end; /* Aligne la navbar à droite */
+  align-items: center;
+  padding: 15px;
+  background-color: #004080; /* Couleur de fond de la navbar */
+  border-bottom: 2px solid #131414; /* Bordure en bas */
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  display: inline;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 18px;
+  color: white; /* Couleur du texte */
+  transition: color 0.3s;
+  display: flex; /* Pour aligner l'icône et le texte */
+  align-items: center; /* Aligne verticalement l'icône et le texte */
+}
+
+.navbar a i {
+  margin-right: 8px; /* Espace entre l'icône et le texte */
+}
+
+.navbar a:hover {
+  color: #050505; /* Couleur au survol */
+}
+
+.active {
+  font-weight: bold;
+  border-bottom: 2px solid #f0f0ec; /* Bordure pour l'élément actif */
+}
+
+/* Styles pour le conteneur de connexion */
+.login-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.login-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.form-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+}
+
+button {
+  width: 100%;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}

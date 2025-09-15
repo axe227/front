@@ -1,0 +1,49 @@
+<h2>Recherche de Vignette</h2>
+<div>
+  <label for="immatriculation">Immatriculation :</label>
+  <input
+    type="text"
+    id="immatriculation"
+    [(ngModel)]="immatriculation"
+    placeholder="Entrez l'immatriculation"
+  />
+  <button (click)="search()">Rechercher</button>
+</div>
+
+<h2> Coordonnées de la vignette </h2>
+<div class="table-container" *ngIf="vignettes.length > 0">
+  <table>
+    <thead>
+      <tr>
+        <th>Nom & Prénom</th>
+        <th>Immatriculation</th>
+        <th>Numéro Quittance</th>
+        <th>Date Vente</th>
+        <th>Montant</th>
+        <th>Série</th>
+        <th>Date Expiration</th>
+        <th>Taxe</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of vignettes">
+        <td>{{ v.nom_prenom }}</td>
+        <td>{{ v.immatriculation }}</td>
+        <td>{{ v.numero_quittance }}</td>
+        <td>{{ v.date_vente }}</td>
+        <td>{{ v.montant }}</td>
+        <td>{{ v.serie }}</td>
+        <td>{{ v.date_expiration }}</td>
+        <td>{{ v.taxe }}</td>
+        <td>
+          <i class="fas fa-edit" title="Modifier" (click)="editVignette(v)"></i>
+          <i class="fas fa-trash" title="Supprimer" (click)="deleteVignette(v)"></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="vignettes.length === 0 && immatriculation">
+  <p>Aucune vignette trouvée pour l'immatriculation "{{ immatriculation }}".</p>
+</div>
