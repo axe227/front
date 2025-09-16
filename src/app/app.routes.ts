@@ -19,12 +19,14 @@ export const routes: Routes = [
   { path: 'creat-admin', component: CreateAdminComponent }, // corrigé (chrinore)
 
   { path: 'rechercher-vignette', component: RechercherVignetteComponent },
-  { path: 'DashboardComponent', component: DashboardComponent }, // corrigé (chrinore)
+  { path: 'DashboardComponent', component: DashboardComponent },
   {
     path: 'admin',
     component: CreateAdminComponent,
     canActivate: [authGuard],
     // children: [{ path: 'google', component: ExternalRedirectComponent }], corrigé (chrinore)
   },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  // test
   { path: '**', redirectTo: 'DashboardComponent' },
 ];
