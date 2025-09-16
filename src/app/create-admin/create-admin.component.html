@@ -1,1 +1,70 @@
-<p>create-admin works!</p>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+<div class="form-container">
+  <h2>Création d'un Admin</h2>
+  <form (ngSubmit)="onSubmit()" #adminForm="ngForm">
+    <!-- corrigé par chrinore -->
+    <div class="form-group">
+      <label for="username">Nom d'utilisateur</label>
+      <div class="input-icon">
+        <i class="fa fa-user"></i>
+        <input
+          type="text"
+          id="username"
+          name="name"
+          placeholder="Nom d'utilisateur"
+          [(ngModel)]="adminData.name"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <div class="input-icon">
+        <i class="fa fa-envelope"></i>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          [(ngModel)]="adminData.email"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <div class="input-icon">
+        <i class="fa fa-lock"></i>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Mot de passe"
+          [(ngModel)]="adminData.password"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="role">Rôle</label>
+      <div class="input-icon">
+        <i class="fa fa-user-shield"></i>
+        <select id="role" name="role" [(ngModel)]="adminData.role" required>
+          <option value="SuperAdmin">Super Admin</option>
+          <option value="Moderateur">Modérateur</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="adminForm.invalid">
+      <i class="fa fa-plus"></i> Créer Admin
+    </button>
+  </form>
+</div>
