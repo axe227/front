@@ -11,6 +11,7 @@
 </div>
 
 <h2> Coordonnées de la vignette </h2>
+
 <div class="table-container" *ngIf="vignettes.length > 0">
   <table>
     <thead>
@@ -46,4 +47,21 @@
 </div>
 <div *ngIf="vignettes.length === 0 && immatriculation">
   <p>Aucune vignette trouvée pour l'immatriculation "{{ immatriculation }}".</p>
+</div>
+<!-- 🔽 Formulaire de création -->
+<div class="form-container" *ngIf="showCreateForm">
+  <h3>➕ Créer une Vignette</h3>
+  <form (ngSubmit)="createVignette()">
+    <input type="text" [(ngModel)]="newVignette.nom_prenom" name="nom_prenom" placeholder="Nom & Prénom" required />
+    <input type="text" [(ngModel)]="newVignette.immatriculation" name="immatriculation" placeholder="Immatriculation" required />
+    <input type="text" [(ngModel)]="newVignette.numero_quittance" name="numero_quittance" placeholder="Numéro Quittance" required />
+    <input type="date" [(ngModel)]="newVignette.date_vente" name="date_vente" required />
+    <input type="number" [(ngModel)]="newVignette.montant" name="montant" placeholder="Montant" required />
+    <input type="text" [(ngModel)]="newVignette.serie" name="serie" placeholder="Série" required />
+    <input type="date" [(ngModel)]="newVignette.date_expiration" name="date_expiration" required />
+    <input type="number" [(ngModel)]="newVignette.taxe" name="taxe" placeholder="Taxe" required />
+    
+    <button type="submit">✅ Enregistrer</button>
+    <button type="button" (click)="closeCreateForm()">❌ Annuler</button>
+  </form>
 </div>
