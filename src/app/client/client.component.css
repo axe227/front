@@ -1,18 +1,23 @@
+body {
+  font-family: 'Poppins', sans-serif; /* Utilisation de la nouvelle police */
+  background-color: #e9ecef; /* Couleur de fond douce */
+}
+
 .client-container {
   max-width: 500px;
   margin: 50px auto;
-  padding: 10px;
-  background: #f9fafb;
+  padding: 20px; /* Augmenter le padding pour plus d'espace */
+  background: #ffffff; /* Fond blanc pour le conteneur */
   border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-  font-family: Arial, sans-serif;
-  margin-top: 20px;;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Ombre plus douce */
 }
 
 .client-container h2 {
   text-align: center;
   color: #333;
   margin-bottom: 20px;
+  font-size: 24px; /* Augmenter la taille du titre */
+  font-weight: 600; /* Gras */
 }
 
 .form-group {
@@ -22,22 +27,37 @@
 }
 
 .form-group label {
-  font-size: 14px;
+  font-size: 16px; /* Augmenter la taille des étiquettes */
   margin-bottom: 5px;
   color: #444;
+  font-weight: 600; /* Gras pour les étiquettes */
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #007bff; /* Couleur des icônes */
+  font-size: 18px; /* Taille des icônes */
 }
 
 .form-group input {
-  padding: 10px;
+  padding: 10px 10px 10px 40px; /* Espacement pour l'icône */
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 16px; /* Augmenter la taille de la police */
   outline: none;
   transition: border 0.3s;
 }
 
 .form-group input:focus {
   border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Ajout d'une ombre au focus */
 }
 
 button {
@@ -48,8 +68,9 @@ button {
   padding: 12px;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 16px; /* Augmenter la taille de la police */
   transition: background 0.3s;
+  font-weight: 600; /* Gras pour le bouton */
 }
 
 button:hover {

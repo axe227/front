@@ -1,45 +1,37 @@
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <div class="sidebar">
-  <h2>DASHBOARD</h2>
-   
-  <a routerLink="home" routerLinkActive="active">🏠 Home</a>
-  <a routerLink="admins" routerLinkActive="active">
-    <i class="fas fa-user-shield"></i> Creat Admin
-  </a>
-  <a routerLink="stats" routerLinkActive="active">📊 Statistiques</a>
-  <a routerLink="products" routerLinkActive="active">🛒 Produits</a>
-  <a routerLink="clients" routerLinkActive="active">
-    <i class="fas fa-user"></i> Listes clients
-  </a>
+    <h2>DASHBOARD</h2>
+    <ul>
+        <li><a routerLink="home" routerLinkActive="active"><i class="fa-solid fa-house icon-home"></i> Home</a></li>
+        <li><a routerLink="admins" routerLinkActive="active"><i class="fa-solid fa-user-tie icon-admin"></i> Créer Admin</a></li>
+            <li><a routerLink="clients" routerLinkActive="active"><i class="fa-solid fa-file-lines icon-form"></i> Créer clients</a></li>
+                    <li><a routerLink="admin-list" routerLinkActive="active"><i class="fa-solid fa-users icon-clients"></i> Liste admins</a></li>
+                                <li><a routerLink="clientList" routerLinkActive="active"><i class="fa-solid fa-users icon-clients"></i> Liste clients</a></li>
+        <li><a routerLink="rechercher-vignette" routerLinkActive="active"><i class="fa-solid fa-magnifying-glass icon-search"></i> Recherche vignette</a></li>
+        <li><a routerLink="/deconnexion" routerLinkActive="active"><i class="fa-solid fa-right-from-bracket icon-logout"></i> Déconnexion</a></li>
+
+    </ul>
 </div>
 
-<!-- Main Content -->
 <div class="content">
-  <div class="header">
-    <h1>Connectés 👋</h1>
-    <button style="padding:8px 16px; border:none; background:#00d4ff; border-radius:8px; cursor:pointer;">
-      Déconnexion
-    </button>
-  </div>
-
-  <div class="stats">
-    <div class="card">
-      <h3>Listes Utilisateurs</h3>
-      <p>8 actifs</p>
+    <div class="stats">
+        <div class="card">
+            <h3><i class="fa-solid fa-users icon-users"></i> Listes Utilisateurs</h3>
+            <p>8 actifs</p>
+        </div>
+        <div class="card">
+            <h3><i class="fa-solid fa-user-tie icon-admin"></i> Listes Admins</h3>
+            <p>4 admins</p>
+        </div>
+        <div class="card">
+            <h3><i class="fa-solid fa-key icon-connections"></i> Connexions</h3>
+            <p>5</p>
+        </div>
+        <div class="card">
+            <h3><i class="fa-solid fa-users-gear icon-total"></i> Total acteurs</h3>
+            <p>12</p>
+        </div>
     </div>
-    <div class="card">
-      <h3>Listes Admins</h3>
-      <p>4 admins</p>
-    </div>
-    <div class="card">
-      <h3>Connexions</h3>
-      <p>5</p>
-    </div>
-    <div class="card">
-      <h3>Total acteurs</h3>
-      <p>12</p>
-    </div>
-  </div>
-
-  <!-- Ici s'affichera la page liée -->
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 </div>

@@ -11,7 +11,8 @@
 </div>
 
 <h2> Coordonnées de la vignette </h2>
-<label for="">hello test </label>
+<label for="">Comme suit : </label>
+<div class="input"></div>
 <div class="table-container" *ngIf="vignettes.length > 0">
   <table>
     <thead>
@@ -49,21 +50,137 @@
   <p>Aucune vignette trouvée pour l'immatriculation "{{ immatriculation }}".</p>
 </div>
 <!-- 🔽 Formulaire de création -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
 <div class="form-container" *ngIf="showCreateForm">
   <h3>➕ Créer une Vignette</h3>
-  <form (ngSubmit)="createVignette()">
-    <input type="text" [(ngModel)]="newVignette.nom_prenom" name="nom_prenom" placeholder="Nom & Prénom" required />
-    <input type="text" [(ngModel)]="newVignette.immatriculation" name="immatriculation" placeholder="Immatriculation" required />
-    <input type="text" [(ngModel)]="newVignette.numero_quittance" name="numero_quittance" placeholder="Numéro Quittance" required />
-    <input type="date" [(ngModel)]="newVignette.date_vente" name="date_vente" required />
-    <input type="number" [(ngModel)]="newVignette.montant" name="montant" placeholder="Montant" required />
-    <input type="text" [(ngModel)]="newVignette.serie" name="serie" placeholder="Série" required />
-    <input type="date" [(ngModel)]="newVignette.date_expiration" name="date_expiration" required />
-    <input type="number" [(ngModel)]="newVignette.taxe" name="taxe" placeholder="Taxe" required />
-    
-    <button type="submit">✅ Enregistrer</button>
-    <button type="button" (click)="closeCreateForm()">❌ Annuler</button>
+  <form (ngSubmit)="createVignette()" #vignetteForm="ngForm">
+    <div class="form-group">
+      <label for="nom_prenom">Nom & Prénom</label>
+      <div class="input-icon">
+        <i class="fa fa-user"></i>
+        <input
+          type="text"
+          id="nom_prenom"
+          name="nom_prenom"
+          placeholder="Nom & Prénom"
+          [(ngModel)]="newVignette.nom_prenom"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="immatriculation">Immatriculation</label>
+      <div class="input-icon">
+        <i class="fa fa-car"></i>
+        <input
+          type="text"
+          id="immatriculation"
+          name="immatriculation"
+          placeholder="Immatriculation"
+          [(ngModel)]="newVignette.immatriculation"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="numero_quittance">Numéro Quittance</label>
+      <div class="input-icon">
+        <i class="fa fa-file-invoice"></i>
+        <input
+          type="text"
+          id="numero_quittance"
+          name="numero_quittance"
+          placeholder="Numéro Quittance"
+          [(ngModel)]="newVignette.numero_quittance"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="date_vente">Date Vente</label>
+      <div class="input-icon">
+        <i class="fa fa-calendar-alt"></i>
+        <input
+          type="date"
+          id="date_vente"
+          name="date_vente"
+          [(ngModel)]="newVignette.date_vente"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="montant">Montant</label>
+      <div class="input-icon">
+        <i class="fa fa-euro-sign"></i>
+        <input
+          type="number"
+          id="montant"
+          name="montant"
+          placeholder="Montant"
+          [(ngModel)]="newVignette.montant"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="serie">Série</label>
+      <div class="input-icon">
+        <i class="fa fa-tag"></i>
+        <input
+          type="text"
+          id="serie"
+          name="serie"
+          placeholder="Série"
+          [(ngModel)]="newVignette.serie"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="date_expiration">Date Expiration</label>
+      <div class="input-icon">
+        <i class="fa fa-calendar-times"></i>
+        <input
+          type="date"
+          id="date_expiration"
+          name="date_expiration"
+          [(ngModel)]="newVignette.date_expiration"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="taxe">Taxe</label>
+      <div class="input-icon">
+        <i class="fa fa-money-bill-wave"></i>
+        <input
+          type="number"
+          id="taxe"
+          name="taxe"
+          placeholder="Taxe"
+          [(ngModel)]="newVignette.taxe"
+          required
+        />
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="vignetteForm.invalid">
+      <i class="fa fa-save"></i> ✅ Enregistrer
+    </button>
+    <button type="button" (click)="closeCreateForm()">
+      <i class="fa fa-times"></i> ❌ Annuler
+    </button>
   </form>
 </div>
-</a>
-</p>

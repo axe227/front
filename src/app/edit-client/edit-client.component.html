@@ -1,0 +1,22 @@
+<div class="client-container">
+  <h2>Modifier le Client</h2>
+  <form (ngSubmit)="onSubmit()" #clientForm="ngForm">
+    <div class="form-group">
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" [(ngModel)]="clientData.nom" required />
+    </div>
+    <div class="form-group">
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" name="prenom" [(ngModel)]="clientData.prenom" required />
+    </div>
+    <div class="form-group">
+      <label for="adresse">Adresse :</label>
+      <input type="text" id="adresse" name="adresse" [(ngModel)]="clientData.adresse" required />
+    </div>
+    <div class="form-group">
+      <label for="telephone">Téléphone :</label>
+      <input type="text" id="telephone" name="telephone" [(ngModel)]="clientData.telephone" required />
+    </div>
+    <button type="submit" [disabled]="clientForm.invalid">Enregistrer</button>
+  </form>
+</div>

@@ -24,6 +24,10 @@ export class ClientService {
   deleteClient(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/clients/${id}`);
   }
+  // Obtenir un client par ID
+getClient(id: number): Observable<any> {
+  return this.http.get(`${this.apiUrl}/clients/${id}`);
+}
 
   // Modifier un client
   updateClient(id: number, client: any): Observable<any> {

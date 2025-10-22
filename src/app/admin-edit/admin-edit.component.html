@@ -1,0 +1,39 @@
+<h2>Modifier un Admin</h2>
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="username">Nom d'utilisateur</label>
+    <input
+      type="text"
+      id="username"
+      [(ngModel)]="adminData.name"
+      name="name"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="email"
+      id="email"
+      [(ngModel)]="adminData.email"
+      name="email"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="role">Rôle</label>
+    <select
+      id="role"
+      [(ngModel)]="adminData.role"
+      name="role"
+      required
+    >
+      <option value="SuperAdmin">Super Admin</option>
+      <option value="Moderateur">Modérateur</option>
+    </select>
+  </div>
+
+  <button type="submit">Modifier Admin</button>
+</form>

@@ -1,0 +1,22 @@
+<h2>Liste des Administrateurs</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nom d'utilisateur</th>
+      <th>Email</th>
+      <th>Rôle</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let admin of admins">
+      <td>{{ admin.name }}</td>
+      <td>{{ admin.email }}</td>
+      <td>{{ admin.role }}</td>
+      <td>
+        <button (click)="editAdmin(admin.id)">Modifier</button>
+        <button (click)="deleteAdmin(admin.id)">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

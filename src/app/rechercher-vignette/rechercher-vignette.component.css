@@ -4,7 +4,7 @@
   padding: 20px; /* Rembourrage interne */
   border-radius: 8px; /* Coins arrondis */
   background: white; /* Fond blanc */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+  box-shadow: 0 2px 50px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
 
 h2 {

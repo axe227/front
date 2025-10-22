@@ -7,13 +7,17 @@ import { RechercherVignetteComponent } from './rechercher-vignette/rechercher-vi
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateAdminComponent } from './create-admin/creat-admi.component';
 import { ExternalRedirectComponent } from './external-redirect.component';
+import { ClientListComponent } from './client-list/client-list.component';
+import { EditClientComponent } from './edit-client/edit-client.component';
+import { AdminEditComponent } from './admin-edit/admin-edit.component';
+import { AdminListComponent } from './admin-list/admin-list.component';
 
 // ⚠️ Les pages internes au dashboard sont déclarées en "children"
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'rechercher-vignette', component: RechercherVignetteComponent },
+
  { path: 'home', component: HomeComponent },
- { path: 'clients', component: ClientComponent },
+   { path: 'admins', component: CreateAdminComponent },
   {
     path: 'dashboard',
     component: DashboardComponent,
@@ -21,7 +25,12 @@ export const routes: Routes = [
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'admins', component: CreateAdminComponent },
-      
+        { path: 'admin-list', component: AdminListComponent },
+          { path: 'admin-edit/:id', component: AdminEditComponent },
+      { path: 'clients', component: ClientComponent },
+       { path: 'clientList', component: ClientListComponent },
+      { path: 'clients/edit/:id', component: EditClientComponent },
+        { path: 'rechercher-vignette', component: RechercherVignetteComponent },
       { path: 'stats', component: ExternalRedirectComponent }, // à remplacer par ton vrai composant stats
       { path: 'products', component: ExternalRedirectComponent }, // idem pour produits
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }, // défaut = home

@@ -15,12 +15,22 @@ export class AdminService {
     return this.http.post(`${this.apiUrl}/admin/createUser`, admin);
   }
 
-  // Récupérer toutes les vignettes (publiques)
-  getVignettes(): Observable<any> {
-    return this.http.get(`${this.apiUrl}/vignettes`);
+  // Récupérer tous les admins
+  getAdmins(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/admin`);
   }
 
-  // Supprimer un admin (⚠️ à condition que tu aies bien une route deleteUser côté Laravel)
+  // Récupérer un admin par ID
+  getAdminById(id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/admin/${id}`);
+  }
+
+  // Modifier un admin
+  updateAdmin(id: number, admin: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}/admin/updateUser/${id}`, admin);
+  }
+
+  // Supprimer un admin
   deleteAdmin(id: number): Observable<any> {
     return this.http.delete(`${this.apiUrl}/admin/deleteUser/${id}`);
   }
